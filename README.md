@@ -41,3 +41,4 @@ python mayavi_matc.py
 ```
 
 #### Results
+![demo](./images/demo.png)
