@@ -29,6 +29,7 @@ make
 ./chain
 ```
 BTW, you can use the python scripts for visualization.
+
 **Prerequisite**
 ```
 pip install mayavi
