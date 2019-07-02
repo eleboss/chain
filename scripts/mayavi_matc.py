@@ -3,7 +3,7 @@ import mayavi.mlab as mlab
 import xml_loader as loader
 
 
-CHAIN = loader.xml_dataloader("../build/chain_nor.xml","Local_Nor")
+CHAIN = loader.xml_dataloader("../build/chain_nor.xml","Nor")
 
 
 mlab.figure(size=(1920,1080))

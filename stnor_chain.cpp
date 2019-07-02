@@ -15,8 +15,8 @@ int main (int argc, char *argv[])
     }
   }
 
-  string file_path = "/home/eleboss/dvs_dataset/davis240c/outdoors_running/events.txt";
-  double process_data_num = READING_EVENT;
+  string file_path = "/home/eleboss/dvs_dataset/davis240c/outdoors_running/events.txt"; //which file you want to process?
+  double process_data_num = READING_EVENT;//how many event you want to process?
   timer_0.tic();
   vector<EV_Array> ev_array;
   cout<<"Starting loading file....."<<endl;
