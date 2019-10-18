@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "filesystem": "cpp"
+        "filesystem": "cpp",
+        "dense": "cpp"
     }
 }

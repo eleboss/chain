@@ -15,6 +15,7 @@ include_directories( ${EIGEN3_INCLUDE_DIRS} )
 
 add_executable(chain stnor_chain.cpp)
 add_executable(asy stnor_chain_asy.cpp)
+add_executable(stackchain stnor_stackchain.cpp)
 
 
 target_link_libraries(asy ${OpenCV_LIBS} )
@@ -23,4 +24,7 @@ target_link_libraries (asy ${EIGEN3_INCLUDE_DIRS})
 
 target_link_libraries(chain ${OpenCV_LIBS} )
 target_link_libraries (chain ${EIGEN3_INCLUDE_DIRS})
+
+target_link_libraries(stackchain ${OpenCV_LIBS} )
+target_link_libraries (stackchain ${EIGEN3_INCLUDE_DIRS})
 
