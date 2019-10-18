@@ -74,6 +74,7 @@ int main (int argc, char *argv[])
     if(cur_position->next == NULL)
     {
       // cout<<"tail!";
+      *cur_position->wp = 1; //mark valid
     }
     else
     { 
@@ -85,6 +86,7 @@ int main (int argc, char *argv[])
         // after: NULL <-- B
         cur_position->next->prev = NULL;
         head = cur_position->next;
+        
       }
       else
       {
@@ -97,6 +99,7 @@ int main (int argc, char *argv[])
       //change tail
       cur_position->next = NULL;
       cur_position->prev = tail;
+      *cur_position->wp = 1; //mark vaild
       //point tail next to the new one
       tail->next = &node_list[image_1d_pos];
       //modify the tail to current position
@@ -106,10 +109,10 @@ int main (int argc, char *argv[])
       loop_pointer = head;
       double w = 0;
       while (loop_pointer->next != NULL) {  
-        if(loop_pointer->next->time != loop_pointer->time)
+        if(*loop_pointer->wp > 0)
         {
           w += PER_WEIGHT;
-        } 
+        }
         *loop_pointer->wp = w;
         loop_pointer = loop_pointer->next;
       }
