@@ -1,7 +1,7 @@
 #include "stnor_stackchain.h"
 
 
-  //x width y height
+  // x width y height
   // 0--------------------->X
   // |
   // |
@@ -9,16 +9,15 @@
   // |
   // v
   // Y
-  //2 5 10 12 15 20 30
-#define FL_WIDTH_R 30
-#define FL_HEIGHT_R 30
-#define FL_WIDTH_2R (FL_WIDTH_R * 2) //要能被图像宽整除
-#define FL_HEIGHT_2R (FL_HEIGHT_R * 2) //要能被图像高整除
-#define IMAGE_PIXELS ((FL_WIDTH_2R+1) * (FL_HEIGHT_2R+1)) //要能被图像高整除
-#define FL_CENTER_PIXELS (FL_WIDTH_2R * FL_HEIGHT_2R) //要能被图像高整除
+  // recommended value 2 5 10 12 15 20 30
+#define FL_WIDTH_R 30   // recommended value 2 5 10 12 15 20 30
+#define FL_HEIGHT_R 30  // recommended value 2 5 10 12 15 20 30
+#define FL_WIDTH_2R (FL_WIDTH_R * 2) 
+#define FL_HEIGHT_2R (FL_HEIGHT_R * 2) 
+#define IMAGE_PIXELS ((FL_WIDTH_2R+1) * (FL_HEIGHT_2R+1)) 
+#define FL_CENTER_PIXELS (FL_WIDTH_2R * FL_HEIGHT_2R) 
 #define FL_WIDTH  (FL_WIDTH_2R * 2)
 #define FL_HEIGHT (FL_HEIGHT_2R * 2)
-// #define WEIGHT_ARRAY_NUM ((FL_WIDTH - (FL_WIDTH_2R-1) + 1 )* (FL_HEIGHT - (FL_HEIGHT_2R-1) + 1))
 #define RECEPTIVE_PIXELS (FL_WIDTH * FL_HEIGHT)
 #define PER_WEIGHT 1.0/IMAGE_PIXELS
 #define IMAGE_HEIGHT 180
