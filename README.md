@@ -25,8 +25,8 @@ make
 4. Repeat the build process.
 5. Use the following to run
 ```
-./asy
-./chain
+./csae
+./stackchain
 ```
 BTW, you can use the python scripts for visualization.
 
@@ -40,7 +40,7 @@ cd ./scripts
 python mayavi_matc.py
 ```
 
-#### Results
+<!-- #### Results -->
 <!-- ![demo](./images/demo.png) -->
 
-#### Animation
+<!-- #### Animation -->

@@ -1,44 +1,14 @@
 #ifndef UTILS_LOAD_
 #define UTILS_LOAD_
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <math.h>
 #include "timer.h"
 #include <Eigen/Dense>
 #include<opencv2/opencv.hpp>
 #include<opencv2/core/core.hpp>     
 #include <opencv2/core/eigen.hpp>
-#include <stdio.h>
-#include <stdlib.h>
-#include <iostream>
-#include <math.h>
-
-
-
-  //x width y height
-  // 0--------------------->X
-  // |
-  // |
-  // |
-  // |
-  // v
-  // Y
-  //2 5 10 12 15 20 30
-#define FL_WIDTH_R 30 //要能被图像宽整除
-#define FL_HEIGHT_R 30 //要能被图像高整除
-#define FL_WIDTH  (FL_WIDTH_R * 2)
-#define FL_HEIGHT (FL_HEIGHT_R * 2)
-#define RECEPTIVE_PIXELS (FL_WIDTH * FL_HEIGHT)
-#define PER_WEIGHT 1.0/RECEPTIVE_PIXELS
-#define IMAGE_HEIGHT 180
-#define IMAGE_WIDTH 240
-#define NUM_PIXELS (IMAGE_HEIGHT * IMAGE_WIDTH)
-#define LAYER_X_NUM (IMAGE_WIDTH/FL_WIDTH_R-1)
-#define LAYER_Y_NUM (IMAGE_HEIGHT/FL_HEIGHT_R-1)
-
-#define FRAME_RATE 1000
-#define FRAME_TIME (1.0/FRAME_RATE)
-#define PROCESS_EVENT_NUM 5000000
-
-// Parameter for visualize
-#define VISUALIZE 0
 
 using namespace std;
 using namespace cv;
