@@ -34,6 +34,7 @@ BTW, you can use the python scripts for visualization.
 ```
 pip install mayavi
 ```
+Run the normalization code  
 Then
 ```
 cd ./scripts
