@@ -17,7 +17,7 @@ int main (int argc, char *argv[])
   }
 
   // reading interface
-  string file_path = "/home/eleboss/dvs_dataset/davis240c/outdoors_running/events.txt"; //which file you want to process?
+  string file_path = "/home/eleboss/dvs_dataset/davis240c/shapes_translation/events.txt"; //which file you want to process?
   double process_data_num = READING_EVENT; //how many event you want to process?
 
   timer_0.tic();
@@ -65,8 +65,7 @@ int main (int argc, char *argv[])
     int event_y = ev_array[i].ev_y;
     double event_time = ev_array[i].ev_time;
     int event_polarity = ev_array[i].ev_polarity;
-
-    timer_1.tic();// start timing
+    
     image_1d_pos = id_trans_mat[event_y][event_x];
     cur_position = &node_list[image_1d_pos];
     cur_position->time = event_time;
@@ -105,31 +104,22 @@ int main (int argc, char *argv[])
       //modify the tail to current position
       tail = &node_list[image_1d_pos];
 
-      //order updating
-      loop_pointer = head;
-      double w = 0;
-      while (loop_pointer->next != NULL) {  
-        if(*loop_pointer->wp > 0)
-        {
-          w += PER_WEIGHT;
-        }
-        *loop_pointer->wp = w;
-        loop_pointer = loop_pointer->next;
-      }
-      *tail->wp = w + PER_WEIGHT;
-
     }
-    timer_1.toc();
-
-    elapsed_seconds += (timer_1.end - timer_1.start);
-    elapsed_seconds_per = (timer_1.end - timer_1.start);
-
-
   }
-  array_saver(IMAGE_HEIGHT, IMAGE_WIDTH ,"Nor", "chain_nor.xml", global_weight);
-  cout<<"Overall proceee time "<<elapsed_seconds.count() * 1000.0 <<" ms"<<endl;
-  cout<<"Average proceee time "<<elapsed_seconds.count() * 1000.0 / process_data_num<<" ms"<<endl;
+  //order updating
+  loop_pointer = head;
+  double w = 0;
+  while (loop_pointer->next != NULL) {  
+    if(*loop_pointer->wp > 0)
+    {
+      w += PER_WEIGHT;
+    }
+    *loop_pointer->wp = w;
+    loop_pointer = loop_pointer->next;
+  }
+  *tail->wp = w + PER_WEIGHT;
 
+  array_saver(IMAGE_HEIGHT, IMAGE_WIDTH ,"Nor", "chain_nor.xml", global_weight);
 
   return 0;
 }
