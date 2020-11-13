@@ -45,3 +45,13 @@ python mayavi_matc.py
 <!-- ![demo](./images/demo.png) -->
 
 <!-- #### Animation -->
+
+@ARTICLE{9095269,
+  author={S. {Lin} and F. {Xu} and X. {Wang} and W. {Yang} and L. {Yu}},
+  journal={IEEE Robotics and Automation Letters}, 
+  title={Efficient Spatial-Temporal Normalization of SAE Representation for Event Camera}, 
+  year={2020},
+  volume={5},
+  number={3},
+  pages={4265-4272},
+  doi={10.1109/LRA.2020.2995332}}
